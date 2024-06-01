@@ -1,0 +1,312 @@
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/*font-family: "Roboto", sans-serif;
+  font-weight: 400/600;
+  font-style: normal; */
+
+*:not(h1) {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--DarkSlateGrey);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* the big box */
+
+#main-container {
+    background-color: var(--White);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border-radius: 20px;
+    margin-top: 11vh;
+}
+
+/* the box with all the text and stuff */
+
+#text-container {
+    margin: 0 2.5em;
+
+}
+
+/* title part */
+
+#title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 36px;
+    color: var(--DarkSlateGrey);
+}
+
+#title>h1 {
+    padding: 0.1em;
+    margin: 0;
+}
+
+/* the description text */
+
+#description {
+    display: flex;
+    flex-direction: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 25vw;
+    overflow-wrap: break-word;
+}
+
+/* benefits list */
+
+#list {
+    list-style-image: url(/assets/images/icon-list.svg);
+    margin-left: -1em;
+    padding-bottom: 1em;
+}
+
+#list>ul>li {
+    margin-bottom: 5px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* email subbing part */
+
+#mail {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+
+#mail>input {
+    padding: 1em;
+    border: 1px solid var(--Grey);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#error-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#error-container>label {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--DarkSlateGrey);
+}
+
+#error {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--Tomato);
+    display:none;
+}
+
+#input-error{
+    border:1px solid var(--Tomato);
+    background-color: rgb(247, 228, 217);
+}
+
+#mail>button {
+    border: 0;
+    background-color: var(--DarkSlateGrey);
+    color: var(--White);
+    padding: 1em;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+
+#mail>button:hover {
+    background-image: linear-gradient(to right, hotpink, var(--Tomato), rgb(221, 144, 0));
+}
+
+/* the pic */
+
+#image {
+    object-fit: contain;
+}
+
+
+/* thank you screen */
+
+#thanks-container {
+    background-color: var(--White);
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 2em 1.5em;
+    border-radius: 25px;
+    display: none;
+}
+
+#thanks-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    color: var(--DarkSlateGrey);
+    width: 25vw;
+}
+
+#thanks-paragraph {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 25vw;
+    padding: 0;
+    margin: 0;
+}
+
+#thanks-button {
+    border: 0;
+    background-color: var(--DarkSlateGrey);
+    color: var(--White);
+    padding: 1em;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+#thanks-button:hover {
+    background-image: linear-gradient(to right, hotpink, var(--Tomato), rgb(221, 144, 0));
+}
+
+@media only screen and (max-width:375px) {
+
+    html,
+    body {
+        overflow-y: hidden;
+        margin: 0;
+    }
+
+    #main-container {
+        flex-direction: column-reverse;
+        margin: 0;
+        padding: 0 0 3em 0;
+        border-radius: 0;
+    }
+
+    #text-container {
+        padding: 0 0.5em;
+        margin: 0;
+    }
+
+    #title>h1 {
+        font-size: 35px;
+        padding-top: 0.7em;
+    }
+
+    #description {
+        width: 92vw;
+    }
+
+    #image {
+        width: 100vw;
+        object-fit: fill;
+    }
+
+    ul {
+        width: 75vw;
+    }
+
+    #thanks-container {
+        min-height: 100vh;
+        width: 100vw;
+        margin: 0;
+        justify-content: center;
+    }
+
+    #thanks-title {
+        width: 100vw;
+    }
+
+    #thanks-paragraph {
+        width: 100vw;
+    }
+
+    #thanks-button {
+        margin-top: 20em;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    #image {
+        max-width: 100vw;
+    }
+}
+
+@media only screen and (max-width:425px) {
+    #main-container {
+        flex-direction: column-reverse;
+        margin: 0;
+        padding: 0 0 3em 0;
+        border-radius: 0;
+    }
+
+    #text-container {
+        padding: 0 0.5em;
+        margin: 0;
+    }
+
+    #title>h1 {
+        font-size: 35px;
+        padding-top: 0.7em;
+    }
+
+    #description {
+        width: 92vw;
+    }
+
+    #image {
+        width: 95vw;
+    }
+
+    ul {
+        width: 75vw;
+    }
+
+    #thanks-container {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        justify-content: center;
+    }
+
+    #thanks-title {
+        width: 100vw;
+    }
+
+    #thanks-paragraph {
+        width: 100vw;
+    }
+
+    #thanks-button {
+        margin-top: 20em;
+    }
+}
